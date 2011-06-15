@@ -4,10 +4,9 @@ begin
 
   file_pattern = 'spec/**/*_spec.rb'
   tasks = { 
-    :spec                  => "-cfd --tag ~wip --tag ~todo --tag ~@template_project",
+    :spec                  => "-cfd --tag ~wip --tag ~todo",
     :spec_wip              => "-cfd --tag @wip",
-    :spec_todo             => "-cfd --tag @todo",
-    :spec_template_project => "-cfd --tag @template_project"
+    :spec_todo             => "-cfd --tag @todo"
   }
 
   tasks.each do | task_name, options |
