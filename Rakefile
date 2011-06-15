@@ -13,7 +13,7 @@ task :environment_ready => [
 begin
   require 'bundler'
   Bundler::GemHelper.install_tasks
-rescue NameError => e
+rescue Exception => e
   puts "This problem should get sorted out once you've completed the above instructions:\n" + e.message
 end
 
