@@ -20,10 +20,7 @@ module Versionary
     end
 
     def <=> other_version
-      with_other_version = VersionNumber.of(other_version) if other_version.class == String
-      with_other_version = other_version if other_version.class == self.class
-      
-      compare(self, with_other_version)
+      compare self, with( other_version )
     end
 
     def to_s
@@ -42,6 +39,14 @@ module Versionary
     def value_of position, from_numbers
       positions = {:major => 0, :minor => 1, :build => 2}
       from_numbers[positions[position]]
+    end
+
+    def with other_version
+      if other_version.class == self.class
+        return other_version
+      else
+        return VersionNumber.of(other_version)
+      end
     end
 
     def compare first_version, second_version
