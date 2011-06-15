@@ -1,5 +1,6 @@
 source :rubygems
+# Put required runtime gems here
 
 group :development do
-  gem "cukesalad", "~> 0.6.1"
+  gem 'rspec', '~> 2.6.0'
 end
