@@ -1,6 +1,4 @@
 source :rubygems
-# Put required runtime gems here
 
-group :development do
-  gem 'rspec', '~> 2.6.0'
-end
+# See:
+gemspec
