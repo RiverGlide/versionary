@@ -13,7 +13,7 @@ module Versionary
 
     def initialize version
       raise NotAVersionComplaint.about version if not a_recognised? version
-      number = infer_from version
+      number = interpreted_from version
       @major = value_of :major, number
       @minor = value_of :minor, number
       @build = value_of :build, number
@@ -32,7 +32,7 @@ module Versionary
       version =~ VERSION_PATTERN
     end
 
-    def infer_from version
+    def interpreted_from version
       version.split( '.' ).collect { |n| n.to_i }
     end
 
